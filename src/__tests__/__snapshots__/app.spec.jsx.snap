@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test app render test app 1`] = `
+<DocumentFragment>
+   
+  <div
+    class="sc-gsTCUz bGKjuf"
+  >
+    Home page
+  </div>
+</DocumentFragment>
+`;
