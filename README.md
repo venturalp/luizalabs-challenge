@@ -4,6 +4,8 @@
 
 ---
 
+![Marvel](docs/images/marvel.png 'Marvel')
+
 # 🦸‍♂️ Luizalabs Marvel Challenge
 
 ## 🛠 Stack
