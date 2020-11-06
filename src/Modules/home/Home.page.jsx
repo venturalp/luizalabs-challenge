@@ -1,13 +1,14 @@
 import { ResponsiveImage } from 'Commons/images/Images.ResponsiveImage'
 import { useCharacterServices } from 'Modules/character/Character.Services'
 import { useCharacterStore } from 'Modules/character/Character.Store'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import LogoSmall from 'Assets/logo.png'
 import Logo from 'Assets/logo2x.png'
 import { SearchBar } from 'Commons/form/Form.SearchBar'
 import { Toggle } from 'Commons/form/Form.Toggle'
 import { CharacterCard } from 'Modules/character/Character.Card'
+import { CharacterFilter } from 'Modules/character/Character.Filter'
 
 const logoImgQueries = [
   {
@@ -33,14 +34,34 @@ const HeaderHome = styled.div`
   }
 `
 
-const CharacterCardStyled = styled(CharacterCard)`
-  width: ${props => `${props.width}px`};
+const FilterContainer = styled.div`
+  max-width: 95%;
+  width: 1100px;
+  margin: 0 auto;
+`
+
+const CharacterCardContainer = styled.div`
+  max-width: 95%;
+  width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 1fr;
+  grid-gap: 35px;
+  @media (min-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `
 
 export const HomePage = () => {
   const { getCharacterList } = useCharacterServices()
   const { characters } = useCharacterStore()
-  const [cardSize, setCardSize] = useState(200)
 
   useEffect(() => {
     const fetchData = async () => getCharacterList()
@@ -58,17 +79,23 @@ export const HomePage = () => {
         </p>
         <SearchBar fullWidth />
       </HeaderHome>
-      <Toggle />
-      <CharacterCardStyled
-        name="teste"
-        onFavorite={e => {
-          console.log(e)
-          setCardSize(cardSize * 1.1)
-        }}
-        img="https://picsum.photos/200"
-        width={cardSize}
-      />
-      {JSON.stringify(characters)}
+      <FilterContainer>
+        <CharacterFilter total={characters?.pageInfo?.total} />
+      </FilterContainer>
+      <CharacterCardContainer>
+        {characters?.list?.map(char => (
+          <CharacterCard
+            className="character-card"
+            name={char.name}
+            key={char.name}
+            onFavorite={e => {
+              console.log(e)
+            }}
+            img={`${char?.thumbnail?.path}.${char?.thumbnail?.extension}`}
+          />
+        ))}
+      </CharacterCardContainer>
+      {/* {JSON.stringify(characters)} */}
     </HomeContainer>
   )
 }

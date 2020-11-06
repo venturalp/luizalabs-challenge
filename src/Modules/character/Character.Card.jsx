@@ -5,8 +5,11 @@ import styled from 'styled-components'
 const CardWrapper = styled.div``
 
 const CardBody = styled.div`
-  border-bottom: ${props => `2px solid  ${props.theme.mainColor}`};
+  border-bottom: ${props => `4px solid  ${props.theme.mainColor}`};
   background-image: ${props => `url('${props.img}')`};
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   height: ${props => `${props.height}px`};
   width: 100%;
 `
@@ -28,11 +31,13 @@ export const CharacterCard = ({
   const cardRef = useRef()
 
   useEffect(() => {
-    const onResize = e => console.log('resize', e)
+    const onResize = e => {
+      setHeight(cardRef.current.offsetWidth)
+    }
 
-    cardRef.current?.addEventListener('resize', onResize)
+    global?.window?.addEventListener('resize', onResize)
 
-    return () => cardRef.current?.removeEventListener('resize', onResize)
+    return () => global?.window?.removeEventListener('resize', onResize)
   }, [])
 
   useEffect(() => {
