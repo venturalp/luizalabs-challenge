@@ -9,6 +9,7 @@ import { SearchBar } from 'Commons/form/Form.SearchBar'
 import { Toggle } from 'Commons/form/Form.Toggle'
 import { CharacterCard } from 'Modules/character/Character.Card'
 import { CharacterFilter } from 'Modules/character/Character.Filter'
+import { Grid } from 'Commons/container/Container.Grid'
 
 const logoImgQueries = [
   {
@@ -34,16 +35,21 @@ const HeaderHome = styled.div`
   }
 `
 
-const FilterContainer = styled.div`
+const FilterContainer = styled(CharacterFilter)`
   max-width: 95%;
   width: 1100px;
-  margin: 0 auto;
+  margin: 60px auto 25px;
+`
+
+const Footer = styled.footer`
+  height: 60px;
+  background-color: ${props => props.theme.mainColor};
 `
 
 const CharacterCardContainer = styled.div`
   max-width: 95%;
   width: 1100px;
-  margin: 0 auto;
+  margin: 0 auto 120px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-auto-rows: 1fr;
@@ -79,9 +85,7 @@ export const HomePage = () => {
         </p>
         <SearchBar fullWidth />
       </HeaderHome>
-      <FilterContainer>
-        <CharacterFilter total={characters?.pageInfo?.total} />
-      </FilterContainer>
+      <FilterContainer total={characters?.pageInfo?.total} />
       <CharacterCardContainer>
         {characters?.list?.map(char => (
           <CharacterCard
@@ -95,7 +99,7 @@ export const HomePage = () => {
           />
         ))}
       </CharacterCardContainer>
-      {/* {JSON.stringify(characters)} */}
+      <Footer />
     </HomeContainer>
   )
 }

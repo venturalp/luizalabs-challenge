@@ -9,17 +9,18 @@ const SearchInput = styled.input`
   border: 0;
   border-radius: 50px;
   outline: none;
-  height: 52px;
+  height: 44px;
   font-size: 18px;
-  padding: 0 15px 0 60px;
+  padding: 0 15px 0 38px;
   color: ${props => props.theme.mainColor};
   background-image: url(${SearchIco});
   background-repeat: no-repeat;
   background-position: 12px center;
   width: ${props => (props.fullWidth ? '100%' : 'inherit')};
   @media (min-width: 768px) {
+    padding: 0 15px 0 60px;
     font-size: 22px;
-    height: 72px;
+    height: 58px;
     background-image: url(${SearchIco2x});
   }
   &:focus {

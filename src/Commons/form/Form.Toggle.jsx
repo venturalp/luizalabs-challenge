@@ -5,12 +5,16 @@ import styled from 'styled-components'
 
 const IcoWrapper = styled.span`
   cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 `
 
 export const Toggle = ({
-  emptyImg = HeartEmpty,
-  filledImg = HeartFilled,
+  falseImg = HeartEmpty,
+  trueImg = HeartFilled,
   defaultValue = false,
+  label,
   value,
   alt = 'toggleIco',
   onChange,
@@ -29,13 +33,9 @@ export const Toggle = ({
   }, [value])
 
   return (
-    <IcoWrapper>
-      <img
-        src={isChecked ? filledImg : emptyImg}
-        {...props}
-        alt={alt}
-        onClick={handleClick}
-      />
+    <IcoWrapper onClick={handleClick}>
+      <img src={isChecked ? trueImg : falseImg} {...props} alt={alt} />
+      {label ? <p>{label}</p> : null}
     </IcoWrapper>
   )
 }

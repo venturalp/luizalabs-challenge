@@ -15,9 +15,14 @@ const CardBody = styled.div`
 `
 
 const CardFooter = styled.div`
+  padding-top: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: 600;
+  & > p {
+    padding-right: 20px;
+  }
 `
 
 export const CharacterCard = ({
