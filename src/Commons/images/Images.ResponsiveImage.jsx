@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
 
 const orderQueries = (queries = []) => {
   const reordered = queries?.sort((a, b) => (a.size < b.size ? 1 : -1))
 
   return reordered
 }
+
+const Image = styled.img`
+  max-width: 95%;
+  @media (min-width: 768px) {
+    max-width: 100%;
+  }
+`
 
 export const ResponsiveImage = ({ queries, alt, ...props }) => {
   const [queriesOrdered] = useState(orderQueries(queries))
@@ -28,5 +36,5 @@ export const ResponsiveImage = ({ queries, alt, ...props }) => {
     setCurrentImage(getImage)
   }, [queriesOrdered, wSize])
 
-  return currentImage ? <img src={currentImage} {...props} alt={alt} /> : null
+  return currentImage ? <Image src={currentImage} {...props} alt={alt} /> : null
 }
