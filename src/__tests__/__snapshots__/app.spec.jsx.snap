@@ -4,9 +4,500 @@ exports[`test app render test app 1`] = `
 <DocumentFragment>
    
   <div
-    class="sc-gsTCUz bGKjuf"
+    class="sc-iBPRYJ kEDcat"
   >
-    Home page
+    <img
+      src="logo2x.png"
+    />
+    <div
+      class="sc-fubCfw cMcwNv"
+    >
+      <h1>
+        EXPLORE O UNIVERSO
+      </h1>
+      <p>
+        Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - e aqueles que você descobrirá em breve!
+      </p>
+      <input
+        class="sc-gsTCUz ipNxAc"
+        type="text"
+      />
+    </div>
+    <div
+      class="sc-pFZIQ khUFZM"
+    >
+      <div
+        class="sc-gKsewC cSJOJC"
+      >
+        <p>
+          Encontrados 1493 heróis
+        </p>
+      </div>
+    </div>
+    <div
+      class="sc-jrAGrp cRTwlq"
+    >
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg glIvOD"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            3-D Man
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg tGzBg"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            A-Bomb (HAS)
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg jGeHCH"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            A.I.M.
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg hUWmUT"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Aaron Stack
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg eShFlg"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Abomination (Emil Blonsky)
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg hUWmUT"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Abomination (Ultimate)
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg hQKFUp"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Absorbing Man
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg exyWkk"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Abyss
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg kIGUYQ"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Abyss (Age of Apocalypse)
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg hUWmUT"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Adam Destine
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg ezYcJp"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Adam Warlock
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg jjgPU"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Aegis (Trey Rollins)
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg cpEMUL"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Agent Brand
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg hUWmUT"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Agent X (Nijo)
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg cVOvZf"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Agent Zero
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg dhjmSZ"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Agents of Atlas
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg hUWmUT"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Aginar
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg hUWmUT"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Air-Walker (Gabriel Lan)
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg gFLVCx"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Ajak
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="sc-hKgILt character-card"
+      >
+        <div
+          class="sc-eCssSg hgBouR"
+          height="0"
+        />
+        <div
+          class="sc-jSgupP cdwkwL"
+        >
+          <p>
+            Ajaxis
+          </p>
+          <span
+            class="sc-dlfnbm cbbQCX"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;

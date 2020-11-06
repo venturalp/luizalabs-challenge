@@ -1,15 +1,30 @@
 import { useRequests } from 'Commons/requests/Requests.defaults'
 import { useCharacterStore } from './Character.Store'
+import { characterMockList } from './mocks/Character.Mock.List'
 
-const apikey = 'bfebc69598f56b24aab84757b97b497f'
+const apikey = 'ed55883a8d48462344e398744418175d'
 
 export const useCharacterServices = () => {
   const axios = useRequests()
   const { setCharacters } = useCharacterStore()
 
+  const getCharacterListMock = () => {
+    setCharacters({
+      list: [...characterMockList.data.results],
+      pageInfo: {
+        count: characterMockList.data.count,
+        limit: characterMockList.data.limit,
+        offset: characterMockList.data.offset,
+        total: characterMockList.data.total,
+      },
+    })
+
+    return { success: true }
+  }
+
   const getCharacterList = () =>
     axios
-      .get('http://gateway.marvel.com/v1/public/characters', {
+      .get('https://gateway.marvel.com/v1/public/characters?limit=20', {
         params: {
           apikey,
         },
@@ -21,6 +36,7 @@ export const useCharacterServices = () => {
           pageInfo: {
             count: data.count,
             limit: data.limit,
+            total: data.total,
             offset: data.offset,
           },
         })
@@ -33,6 +49,6 @@ export const useCharacterServices = () => {
       }))
 
   return {
-    getCharacterList,
+    getCharacterList: getCharacterListMock,
   }
 }
