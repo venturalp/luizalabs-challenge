@@ -10,7 +10,6 @@ const SnackContainer = styled.div`
   align-items: center;
   position: fixed;
   bottom: ${props => (props.open ? '10px' : `-${2 * props.height}px`)};
-  right: 20px;
   max-width: 95%;
   z-index: 2000;
   padding: 10px 20px;
@@ -21,6 +20,14 @@ const SnackContainer = styled.div`
   transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
   transition-property: all;
   transition-duration: 0.25s;
+  right: inherit;
+  left: 50%;
+  transform: translateX(-50%);
+  @media (min-width: 768px) {
+    right: 20px;
+    left: inherit;
+    transform: translateX(0);
+  }
 `
 
 export const SnackMessage = ({

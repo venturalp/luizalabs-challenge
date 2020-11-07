@@ -5,7 +5,8 @@ import SearchIco2x from 'Assets/searchIco2x.png'
 
 const SearchInput = styled.input`
   appearance: none;
-  background-color: ${props => props.theme.lightColor};
+  background-color: ${props =>
+    props.inside ? '#fff' : props.theme.lightColor};
   border: 0;
   border-radius: 50px;
   outline: none;
@@ -29,6 +30,6 @@ const SearchInput = styled.input`
   }
 `
 
-export const SearchBar = ({ fullWidth, ...props }) => (
-  <SearchInput type="text" fullWidth={fullWidth} {...props} />
+export const SearchBar = ({ fullWidth, inside, ...props }) => (
+  <SearchInput type="text" fullWidth={fullWidth} inside={inside} {...props} />
 )

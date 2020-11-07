@@ -2,7 +2,8 @@ import { create } from 'zustand'
 
 export const [useCharacterStore] = create(set => ({
   characters: {},
-  currentCharacter: {},
+  currentCharacter: null,
+  currentCharacterComics: null,
   favorites: (() => {
     const retrieveFav = [
       ...JSON.parse(localStorage.getItem('favorites') || '[]'),
@@ -17,4 +18,6 @@ export const [useCharacterStore] = create(set => ({
   },
   setCharacters: characters => set({ characters }),
   setCurrentCharacter: currentCharacter => set({ currentCharacter }),
+  setCurrentCharacterComics: currentCharacterComics =>
+    set({ currentCharacterComics }),
 }))

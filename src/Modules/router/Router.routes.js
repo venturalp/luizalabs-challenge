@@ -1,3 +1,4 @@
+import { CharacterPage } from 'Modules/character/Character.page'
 import { ErrorPage } from 'Modules/error/Error.page'
 import { HomePage } from 'Modules/home/Home.page'
 
@@ -10,8 +11,11 @@ export const routes = [
   {
     component: HomePage,
     path: '/',
-    viewName: 'homeView',
-    title: 'Home',
+    exact: true,
+  },
+  {
+    component: CharacterPage,
+    path: '/Heroi/:id',
     exact: true,
   },
   {
