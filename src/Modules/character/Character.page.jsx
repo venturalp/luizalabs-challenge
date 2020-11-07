@@ -1,7 +1,7 @@
 import { StarProgress } from 'Commons/review/Review.StarProgress'
 import React, { useEffect, useState, useMemo } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 import { useCharacterServices } from './Character.Services'
 import { useCharacterStore } from './Character.Store'
 import LogoSmall from 'Assets/logo.png'
@@ -100,7 +100,7 @@ const InfoBlock = styled.div`
   }
 `
 
-export const CharacterPage = () => {
+export const CharacterPage = withTheme(({ theme }) => {
   const params = useParams()
   const history = useHistory()
   const {
@@ -134,6 +134,9 @@ export const CharacterPage = () => {
   useEffect(() => {
     if (!currentCharacter) getCharacterInfo(params.id)
     if (!currentCharacterComics) getCharacterComics(params.id)
+    global.document.body.style.backgroundColor = theme.backgroundDetail
+
+    return () => (global.document.body.style.backgroundColor = 'inherit')
   }, [])
 
   return (
@@ -200,4 +203,4 @@ export const CharacterPage = () => {
       </CharacterInfoContainer>
     </CharacterPageContainer>
   )
-}
+})

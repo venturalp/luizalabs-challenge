@@ -19,7 +19,7 @@ export const useCharacterServices = () => {
 
   const filterCharacterList = (data, onlyFavorites) => {
     if (onlyFavorites) {
-      const listFav = data.results.filter(char => favorites.includes(char.id))
+      const listFav = [...favorites]
 
       return {
         list: [...listFav],
