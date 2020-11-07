@@ -49,13 +49,14 @@ export const HomePage = () => {
     setFavorites,
   } = useCharacterStore()
   const history = useHistory()
+  const favIds = favorites.map(fav => fav.id)
 
-  const handleFavorite = id => {
-    if (favorites.length === 5 && !favorites.includes(id)) {
+  const handleFavorite = char => {
+    if (favorites.length === 5 && !favIds.includes(char.id)) {
       setSnackProperties({ ...snackProperties, open: true })
-    } else if (favorites.includes(id)) {
-      setFavorites([...favorites.filter(fav => fav != id)])
-    } else setFavorites([...favorites, id])
+    } else if (favIds.includes(char.id)) {
+      setFavorites([...favorites.filter(fav => fav.id != char.id)])
+    } else setFavorites([...favorites, char])
   }
 
   const openCharacter = char => {
@@ -127,10 +128,10 @@ export const HomePage = () => {
             name={char.name}
             key={char.name}
             onClick={() => openCharacter(char)}
-            onFavorite={() => handleFavorite(char.id)}
+            onFavorite={() => handleFavorite(char)}
             img={getCharImg(char)}
             id={char.id}
-            isFavorite={favorites.includes(char.id)}
+            isFavorite={favIds.includes(char.id)}
           />
         ))}
       </CharacterCardContainer>
