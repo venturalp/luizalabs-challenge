@@ -5,14 +5,15 @@ import SearchIco2x from 'Assets/searchIco2x.png'
 
 const SearchInput = styled.input`
   appearance: none;
-  background-color: ${props => props.theme.lightColor};
+  background-color: ${props =>
+    props.inside ? '#fff' : props.theme.lightColor};
   border: 0;
   border-radius: 50px;
   outline: none;
   height: 44px;
   font-size: 18px;
   padding: 0 15px 0 38px;
-  color: ${props => props.theme.mainColor};
+  color: ${props => (props.inside ? props.theme.text : props.theme.mainColor)};
   background-image: url(${SearchIco});
   background-repeat: no-repeat;
   background-position: 12px center;
@@ -29,6 +30,12 @@ const SearchInput = styled.input`
   }
 `
 
-export const SearchBar = ({ fullWidth, ...props }) => (
-  <SearchInput type="text" fullWidth={fullWidth} {...props} />
+export const SearchBar = ({ fullWidth, inside, ...props }) => (
+  <SearchInput
+    type="text"
+    placeholder="Procure por heróis"
+    fullWidth={fullWidth}
+    inside={inside}
+    {...props}
+  />
 )

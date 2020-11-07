@@ -1,12 +1,21 @@
 import { useRequests } from 'Commons/requests/Requests.defaults'
 import { useCharacterStore } from './Character.Store'
-import { characterMockList } from './mocks/Character.Mock.List'
+import {
+  characterMockList,
+  characterMock,
+  characterComicsMock,
+} from './mocks/Character.Mock'
 
 const apikey = 'ed55883a8d48462344e398744418175d'
 
 export const useCharacterServices = () => {
   const axios = useRequests()
-  const { setCharacters, favorites } = useCharacterStore()
+  const {
+    setCharacters,
+    favorites,
+    setCurrentCharacter,
+    setCurrentCharacterComics,
+  } = useCharacterStore()
 
   const filterCharacterList = (data, onlyFavorites) => {
     if (onlyFavorites) {
@@ -48,6 +57,57 @@ export const useCharacterServices = () => {
     return { success: true }
   }
 
+  const getCharacterInfoMock = () => {
+    setCurrentCharacter({
+      ...characterMock?.data?.results?.[0],
+    })
+
+    return { success: true }
+  }
+
+  const getCharacterComicsMock = () => {
+    setCurrentCharacterComics({
+      ...characterComicsMock?.data?.results,
+    })
+
+    return { success: true }
+  }
+
+  const getCharacterInfo = id =>
+    axios
+      .get(`https://gateway.marvel.com/v1/public/characters/${id}`, {
+        showLoading: true,
+        params: { apikey },
+      })
+      .then(response => {
+        setCurrentCharacter({ ...response?.data?.data?.results?.[0] })
+
+        return { success: true }
+      })
+      .catch(() => ({
+        success: false,
+        msg: 'Não foi possível consultar personagem!',
+      }))
+
+  const getCharacterComics = id =>
+    axios
+      .get(
+        `https://gateway.marvel.com/v1/public/characters/${id}/comics?limit=10&orderBy=-onsaleDate`,
+        {
+          showLoading: true,
+          params: { apikey },
+        },
+      )
+      .then(response => {
+        setCurrentCharacterComics([...response?.data?.data?.results])
+
+        return { success: true }
+      })
+      .catch(() => ({
+        success: false,
+        msg: 'Não foi possível consultar quadrinhos do personagem!',
+      }))
+
   const getCharacterList = ({ txtSearch, onlyFavorites, ordered } = {}) => {
     const params = { apikey }
     if (txtSearch) params.nameStartsWith = txtSearch
@@ -71,6 +131,8 @@ export const useCharacterServices = () => {
   }
 
   return {
-    getCharacterList: getCharacterListMock,
+    getCharacterList, // : getCharacterListMock,
+    getCharacterInfo, // : getCharacterInfoMock,
+    getCharacterComics, // : getCharacterComicsMock,
   }
 }

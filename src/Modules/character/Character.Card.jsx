@@ -10,6 +10,7 @@ const CardBody = styled.div`
   background-position: center;
   height: ${props => `${props.height}px`};
   width: 100%;
+  cursor: pointer;
 `
 
 const CardFooter = styled.div`

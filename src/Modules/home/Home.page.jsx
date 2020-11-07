@@ -17,6 +17,8 @@ import {
   HomeContainer,
 } from './Home.styles'
 import { SnackMessage } from 'Commons/message/Message.SnackMessage'
+import { useHistory } from 'react-router-dom'
+import { getCharImg } from 'Modules/character/Character.Helpers'
 
 const logoImgQueries = [
   {
@@ -46,6 +48,7 @@ export const HomePage = () => {
     favorites,
     setFavorites,
   } = useCharacterStore()
+  const history = useHistory()
 
   const handleFavorite = id => {
     if (favorites.length === 5 && !favorites.includes(id)) {
@@ -55,12 +58,10 @@ export const HomePage = () => {
     } else setFavorites([...favorites, id])
   }
 
-  const openCharacter = id => {
-    console.log(id)
+  const openCharacter = char => {
+    setCurrentCharacter({ ...char })
+    history.push(`/Heroi/${char.id}`)
   }
-
-  const getCharImg = char =>
-    `${char?.thumbnail?.path}.${char?.thumbnail?.extension}`
 
   const handleChange = e => setTxtSearch(e?.target?.value)
 
@@ -83,7 +84,7 @@ export const HomePage = () => {
   }, [toggleValues.ordered, toggleValues.onlyFavorites])
 
   useEffect(() => {
-    setCurrentCharacter({})
+    setCurrentCharacter(null)
     doSearch()
   }, [])
 
@@ -92,7 +93,6 @@ export const HomePage = () => {
       <SnackMessage
         open={snackProperties.open}
         onClose={() => {
-          console.log({ ...snackProperties, open: false })
           setSnackProperties({ ...snackProperties, open: false })
         }}
       >
@@ -110,7 +110,7 @@ export const HomePage = () => {
           value={txtSearch}
           onChange={handleChange}
           name="searchBar"
-          autocomplete="off"
+          autoComplete="off"
         />
       </HeaderHome>
       <FilterContainer
@@ -126,7 +126,7 @@ export const HomePage = () => {
             className="character-card"
             name={char.name}
             key={char.name}
-            onClick={() => openCharacter(char.id)}
+            onClick={() => openCharacter(char)}
             onFavorite={() => handleFavorite(char.id)}
             img={getCharImg(char)}
             id={char.id}
