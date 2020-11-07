@@ -18,6 +18,7 @@ import {
 } from './Home.styles'
 import { SnackMessage } from 'Commons/message/Message.SnackMessage'
 import { useHistory } from 'react-router-dom'
+import { getCharImg } from 'Modules/character/Character.Helpers'
 
 const logoImgQueries = [
   {
@@ -61,9 +62,6 @@ export const HomePage = () => {
     setCurrentCharacter({ ...char })
     history.push(`/Heroi/${char.id}`)
   }
-
-  const getCharImg = char =>
-    `${char?.thumbnail?.path}.${char?.thumbnail?.extension}`
 
   const handleChange = e => setTxtSearch(e?.target?.value)
 

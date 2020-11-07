@@ -1,6 +1,10 @@
 import { useRequests } from 'Commons/requests/Requests.defaults'
 import { useCharacterStore } from './Character.Store'
-import { characterMockList, characterMock } from './mocks/Character.Mock'
+import {
+  characterMockList,
+  characterMock,
+  characterComicsMock,
+} from './mocks/Character.Mock'
 
 const apikey = 'ed55883a8d48462344e398744418175d'
 
@@ -56,6 +60,14 @@ export const useCharacterServices = () => {
   const getCharacterInfoMock = () => {
     setCurrentCharacter({
       ...characterMock?.data?.results?.[0],
+    })
+
+    return { success: true }
+  }
+
+  const getCharacterComicsMock = () => {
+    setCurrentCharacterComics({
+      ...characterComicsMock?.data?.results,
     })
 
     return { success: true }
@@ -119,8 +131,8 @@ export const useCharacterServices = () => {
   }
 
   return {
-    getCharacterList: getCharacterListMock,
-    getCharacterInfo: getCharacterInfoMock,
-    getCharacterComics,
+    getCharacterList, // : getCharacterListMock,
+    getCharacterInfo, // : getCharacterInfoMock,
+    getCharacterComics, // : getCharacterComicsMock,
   }
 }

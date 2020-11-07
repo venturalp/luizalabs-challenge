@@ -48,6 +48,13 @@ export const SnackMessage = ({
     }
   }, [open, time])
 
+  useEffect(
+    () => () => {
+      clearTimeout(timer)
+    },
+    [timer],
+  )
+
   return (
     <SnackContainer
       open={open}

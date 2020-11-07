@@ -13,7 +13,7 @@ const SearchInput = styled.input`
   height: 44px;
   font-size: 18px;
   padding: 0 15px 0 38px;
-  color: ${props => props.theme.mainColor};
+  color: ${props => (props.inside ? props.theme.text : props.theme.mainColor)};
   background-image: url(${SearchIco});
   background-repeat: no-repeat;
   background-position: 12px center;
@@ -31,5 +31,11 @@ const SearchInput = styled.input`
 `
 
 export const SearchBar = ({ fullWidth, inside, ...props }) => (
-  <SearchInput type="text" fullWidth={fullWidth} inside={inside} {...props} />
+  <SearchInput
+    type="text"
+    placeholder="Procure por heróis"
+    fullWidth={fullWidth}
+    inside={inside}
+    {...props}
+  />
 )
