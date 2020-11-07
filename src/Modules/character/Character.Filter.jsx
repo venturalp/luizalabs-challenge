@@ -60,10 +60,19 @@ export const CharacterFilter = ({
       <div className="orderName">
         <img src={HeroIco} alt="hero" />
         <p>Ordenar por nome - A/Z</p>
-        <Toggle falseImg={ToggleOff} trueImg={ToggleOn} />
+        <Toggle
+          falseImg={ToggleOff}
+          trueImg={ToggleOn}
+          onChange={onOrder}
+          value={ordered}
+        />
       </div>
       <div className="favorites">
-        <Toggle label="Somente favoritos" />
+        <Toggle
+          label="Somente favoritos"
+          onChange={onFavorites}
+          value={onlyFavorites}
+        />
       </div>
     </Grid>
   </CharacterFilterContainer>

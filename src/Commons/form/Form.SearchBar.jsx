@@ -30,5 +30,5 @@ const SearchInput = styled.input`
 `
 
 export const SearchBar = ({ fullWidth, ...props }) => (
-  <SearchInput type="text" {...props} fullWidth={fullWidth} />
+  <SearchInput type="text" fullWidth={fullWidth} {...props} />
 )

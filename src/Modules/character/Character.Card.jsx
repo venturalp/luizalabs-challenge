@@ -2,8 +2,6 @@ import { Toggle } from 'Commons/form/Form.Toggle'
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 
-const CardWrapper = styled.div``
-
 const CardBody = styled.div`
   border-bottom: ${props => `4px solid  ${props.theme.mainColor}`};
   background-image: ${props => `url('${props.img}')`};
@@ -28,6 +26,7 @@ const CardFooter = styled.div`
 export const CharacterCard = ({
   name,
   onFavorite,
+  onClick,
   isFavorite = false,
   img,
   ...props
@@ -36,7 +35,7 @@ export const CharacterCard = ({
   const cardRef = useRef()
 
   useEffect(() => {
-    const onResize = e => {
+    const onResize = () => {
       setHeight(cardRef.current.offsetWidth)
     }
 
@@ -50,12 +49,12 @@ export const CharacterCard = ({
   }, [cardRef])
 
   return (
-    <CardWrapper {...props} ref={cardRef}>
-      <CardBody img={img} height={height} />
+    <div {...props} ref={cardRef}>
+      <CardBody img={img} height={height} onClick={onClick} />
       <CardFooter>
         <p>{name}</p>
-        <Toggle defaultValue={isFavorite} onChange={onFavorite} />
+        <Toggle onChange={onFavorite} value={isFavorite} />
       </CardFooter>
-    </CardWrapper>
+    </div>
   )
 }
