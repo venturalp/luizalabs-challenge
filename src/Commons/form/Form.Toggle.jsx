@@ -25,7 +25,7 @@ export const Toggle = ({
   const handleClick = () => {
     if (onChange) onChange({ target: { value: !isChecked } })
 
-    setIsChecked(!isChecked)
+    if (defaultValue) setIsChecked(!isChecked)
   }
 
   useEffect(() => {

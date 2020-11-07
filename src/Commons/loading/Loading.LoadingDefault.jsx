@@ -1,7 +1,7 @@
 import { mainTheme } from 'Config/Config.theme'
 import React from 'react'
 import ReactLoading from 'react-loading'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 
 const LoadingContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
@@ -16,7 +16,7 @@ const LoadingContainer = styled.div`
   z-index: 100;
 `
 
-export const LoadingDefault = () => (
+export const LoadingDefault = withTheme(({ theme }) => (
   <LoadingContainer data-testid="loadingComponent">
     <ReactLoading
       type="spinningBubbles"
@@ -25,4 +25,4 @@ export const LoadingDefault = () => (
       width={60}
     />
   </LoadingContainer>
-)
+))

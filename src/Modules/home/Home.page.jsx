@@ -1,15 +1,22 @@
 import { ResponsiveImage } from 'Commons/images/Images.ResponsiveImage'
 import { useCharacterServices } from 'Modules/character/Character.Services'
 import { useCharacterStore } from 'Modules/character/Character.Store'
-import React, { useEffect } from 'react'
-import styled from 'styled-components'
+import React, { useEffect, useState } from 'react'
+
 import LogoSmall from 'Assets/logo.png'
 import Logo from 'Assets/logo2x.png'
 import { SearchBar } from 'Commons/form/Form.SearchBar'
-import { Toggle } from 'Commons/form/Form.Toggle'
+
 import { CharacterCard } from 'Modules/character/Character.Card'
-import { CharacterFilter } from 'Modules/character/Character.Filter'
-import { Grid } from 'Commons/container/Container.Grid'
+
+import {
+  CharacterCardContainer,
+  FilterContainer,
+  Footer,
+  HeaderHome,
+  HomeContainer,
+} from './Home.styles'
+import { SnackMessage } from 'Commons/message/Message.SnackMessage'
 
 const logoImgQueries = [
   {
@@ -22,80 +29,108 @@ const logoImgQueries = [
   },
 ]
 
-const HomeContainer = styled.div`
-  text-align: center;
-`
-
-const HeaderHome = styled.div`
-  max-width: 80%;
-  width: 1024px;
-  margin: 0 auto 45px;
-  & p {
-    margin-bottom: 45px;
-  }
-`
-
-const FilterContainer = styled(CharacterFilter)`
-  max-width: 95%;
-  width: 1100px;
-  margin: 60px auto 25px;
-`
-
-const Footer = styled.footer`
-  height: 60px;
-  background-color: ${props => props.theme.mainColor};
-`
-
-const CharacterCardContainer = styled.div`
-  max-width: 95%;
-  width: 1100px;
-  margin: 0 auto 120px;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-auto-rows: 1fr;
-  grid-gap: 35px;
-  @media (min-width: 500px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media (min-width: 1000px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-`
-
 export const HomePage = () => {
   const { getCharacterList } = useCharacterServices()
-  const { characters } = useCharacterStore()
+  const [toggleValues, setToggleValues] = useState({
+    onlyFavorites: false,
+    ordered: true,
+  })
+  const [snackProperties, setSnackProperties] = useState({
+    open: false,
+    msg: 'Só é possível ter no máximo 5 heróis favoritos!',
+  })
+  const [txtSearch, setTxtSearch] = useState('')
+  const {
+    characters,
+    setCurrentCharacter,
+    favorites,
+    setFavorites,
+  } = useCharacterStore()
+
+  const handleFavorite = id => {
+    if (favorites.length === 5 && !favorites.includes(id)) {
+      setSnackProperties({ ...snackProperties, open: true })
+    } else if (favorites.includes(id)) {
+      setFavorites([...favorites.filter(fav => fav != id)])
+    } else setFavorites([...favorites, id])
+  }
+
+  const openCharacter = id => {
+    console.log(id)
+  }
+
+  const getCharImg = char =>
+    `${char?.thumbnail?.path}.${char?.thumbnail?.extension}`
+
+  const handleChange = e => setTxtSearch(e?.target?.value)
+
+  const doSearch = async () => {
+    const { onlyFavorites, ordered } = toggleValues
+    await getCharacterList({ txtSearch, onlyFavorites, ordered })
+  }
+
+  const updateToggle = name => {
+    setToggleValues({ ...toggleValues, [name]: !toggleValues[name] })
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    await doSearch()
+  }
 
   useEffect(() => {
-    const fetchData = async () => getCharacterList()
-    fetchData()
+    doSearch()
+  }, [toggleValues.ordered, toggleValues.onlyFavorites])
+
+  useEffect(() => {
+    setCurrentCharacter({})
+    doSearch()
   }, [])
 
   return (
     <HomeContainer>
+      <SnackMessage
+        open={snackProperties.open}
+        onClose={() => {
+          console.log({ ...snackProperties, open: false })
+          setSnackProperties({ ...snackProperties, open: false })
+        }}
+      >
+        {snackProperties.msg}
+      </SnackMessage>
       <ResponsiveImage queries={logoImgQueries} />
-      <HeaderHome>
+      <HeaderHome onSubmit={handleSubmit}>
         <h1>EXPLORE O UNIVERSO</h1>
         <p>
           Mergulhe no domínio deslumbrante de todos os personagens clássicos que
           você ama - e aqueles que você descobrirá em breve!
         </p>
-        <SearchBar fullWidth />
+        <SearchBar
+          fullWidth
+          value={txtSearch}
+          onChange={handleChange}
+          name="searchBar"
+          autocomplete="off"
+        />
       </HeaderHome>
-      <FilterContainer total={characters?.pageInfo?.total} />
+      <FilterContainer
+        total={characters?.pageInfo?.total}
+        onFavorites={() => updateToggle('onlyFavorites')}
+        onOrder={() => updateToggle('ordered')}
+        onlyFavorites={toggleValues.onlyFavorites}
+        ordered={toggleValues.ordered}
+      />
       <CharacterCardContainer>
         {characters?.list?.map(char => (
           <CharacterCard
             className="character-card"
             name={char.name}
             key={char.name}
-            onFavorite={e => {
-              console.log(e)
-            }}
-            img={`${char?.thumbnail?.path}.${char?.thumbnail?.extension}`}
+            onClick={() => openCharacter(char.id)}
+            onFavorite={() => handleFavorite(char.id)}
+            img={getCharImg(char)}
+            id={char.id}
+            isFavorite={favorites.includes(char.id)}
           />
         ))}
       </CharacterCardContainer>
