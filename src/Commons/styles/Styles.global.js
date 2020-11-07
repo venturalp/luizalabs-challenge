@@ -6,10 +6,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   html {
-    height: auto;
-    min-height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+    height: 100%;
   }
   body {
     font-family: ${mainTheme.fontDefault};
