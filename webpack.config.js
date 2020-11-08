@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const templateHtml = require('html-webpack-template')
 const config = require('./src/Config/Config.app')
 const { CleanWebpackPlugin: CleanFolder } = require('clean-webpack-plugin')
+
 // const webpack = require('webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 
@@ -104,6 +105,17 @@ module.exports = () => {
               loader: 'file-loader',
               options: {
                 name: 'images/[name].[ext]',
+              },
+            },
+          ],
+        },
+        {
+          test: /_redirects$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '/[name]',
               },
             },
           ],
