@@ -11,6 +11,8 @@ import { SearchBar } from 'Commons/form/Form.SearchBar'
 import { Grid } from 'Commons/container/Container.Grid'
 import { Toggle } from 'Commons/form/Form.Toggle'
 import { getCharImg } from './Character.Helpers'
+import { useFavorites } from './Character.Hooks'
+import { Comic } from './Character.Comic'
 
 const CharacterPageContainer = styled.div`
   background-color: ${props => props.theme.backgroundDetail};
@@ -44,6 +46,30 @@ const CharacterPageHeader = styled.form`
   }
 `
 
+const ComicsContainer = styled.div`
+  max-width: 90%;
+  margin: 120px auto;
+  width: 1024px;
+  & h2 {
+    margin-bottom: 45px;
+  }
+  & > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 35px;
+    @media (min-width: 500px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (min-width: 1000px) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+`
+
 const CharacterInfoContainer = styled.div`
   max-width: 90%;
   margin: 0 auto;
@@ -59,13 +85,26 @@ const CharacterInfoContainer = styled.div`
     font-size: ${props => props.theme.pxToRem(18)};
     line-height: ${props => props.theme.pxToRem(30)};
     margin: 30px 0;
+    @media (min-width: 768px) and (max-width: 1025px) {
+      font-size: ${props => props.theme.pxToRem(15)};
+      line-height: ${props => props.theme.pxToRem(26)};
+    }
   }
   & h1 {
     font-size: ${props => props.theme.pxToRem(18)};
   }
-  & > div > {
-    img {
+  & > div:last-child {
+    text-align: center;
+    & > img {
       max-width: 100%;
+      width: 100%;
+    }
+  }
+  @media (min-width: 400px) {
+    & > div:last-child {
+      & > img {
+        width: inherit;
+      }
     }
   }
   @media (min-width: 768px) {
@@ -79,6 +118,7 @@ const CharacterInfoContainer = styled.div`
         width: 45%;
       }
       &:last-child {
+        text-align: left;
         width: 55%;
       }
     }
@@ -106,11 +146,11 @@ export const CharacterPage = withTheme(({ theme }) => {
   const {
     currentCharacter,
     currentCharacterComics,
-    favorites,
+    setCurrentCharacterComics,
   } = useCharacterStore()
   const { getCharacterInfo, getCharacterComics } = useCharacterServices()
+  const { isFavorite, handleFavorite } = useFavorites()
   const [txtSearch, setTxtSearch] = useState('')
-  console.log('currentCharacterComics', currentCharacterComics)
 
   const getLastComicDate = () =>
     Intl.DateTimeFormat('pt-BR', {
@@ -127,16 +167,15 @@ export const CharacterPage = withTheme(({ theme }) => {
     history.push(`/?q=${txtSearch}`)
   }
 
-  const onFavorite = e => {
-    console.log('onFavorite', e)
-  }
-
   useEffect(() => {
     if (!currentCharacter) getCharacterInfo(params.id)
     if (!currentCharacterComics) getCharacterComics(params.id)
     global.document.body.style.backgroundColor = theme.backgroundDetail
 
-    return () => (global.document.body.style.backgroundColor = 'inherit')
+    return () => {
+      global.document.body.style.backgroundColor = 'inherit'
+      setCurrentCharacterComics(null)
+    }
   }, [])
 
   return (
@@ -155,8 +194,8 @@ export const CharacterPage = withTheme(({ theme }) => {
           <Grid justify="space-between" always>
             <h1>{currentCharacter?.name}</h1>
             <Toggle
-              onChange={onFavorite}
-              value={favorites.includes(currentCharacter?.id)}
+              onChange={() => handleFavorite(currentCharacter)}
+              value={isFavorite(currentCharacter?.id)}
             />
           </Grid>
           <p className="description">{currentCharacter?.description}</p>
@@ -201,6 +240,14 @@ export const CharacterPage = withTheme(({ theme }) => {
           />
         </div>
       </CharacterInfoContainer>
+      <ComicsContainer>
+        <h2>Últimos lançamentos</h2>
+        <div>
+          {currentCharacterComics?.map(comic => (
+            <Comic {...comic} key={comic.title} />
+          ))}
+        </div>
+      </ComicsContainer>
     </CharacterPageContainer>
   )
 })

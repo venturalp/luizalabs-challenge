@@ -16,9 +16,11 @@ import {
   HeaderHome,
   HomeContainer,
 } from './Home.styles'
-import { SnackMessage } from 'Commons/message/Message.SnackMessage'
+
 import { useHistory } from 'react-router-dom'
 import { getCharImg } from 'Modules/character/Character.Helpers'
+import { useFavorites } from 'Modules/character/Character.Hooks'
+import { getQueryParam } from 'Modules/router/Router.Helpers'
 
 const logoImgQueries = [
   {
@@ -33,31 +35,16 @@ const logoImgQueries = [
 
 export const HomePage = () => {
   const { getCharacterList } = useCharacterServices()
+  const { handleFavorite, isFavorite } = useFavorites()
+  const history = useHistory()
   const [toggleValues, setToggleValues] = useState({
     onlyFavorites: false,
     ordered: true,
   })
-  const [snackProperties, setSnackProperties] = useState({
-    open: false,
-    msg: 'Só é possível ter no máximo 5 heróis favoritos!',
-  })
-  const [txtSearch, setTxtSearch] = useState('')
-  const {
-    characters,
-    setCurrentCharacter,
-    favorites,
-    setFavorites,
-  } = useCharacterStore()
-  const history = useHistory()
-  const favIds = favorites.map(fav => fav.id)
-
-  const handleFavorite = char => {
-    if (favorites.length === 5 && !favIds.includes(char.id)) {
-      setSnackProperties({ ...snackProperties, open: true })
-    } else if (favIds.includes(char.id)) {
-      setFavorites([...favorites.filter(fav => fav.id != char.id)])
-    } else setFavorites([...favorites, char])
-  }
+  const [txtSearch, setTxtSearch] = useState(
+    getQueryParam(history.location.search, 'q') || '',
+  )
+  const { characters, setCurrentCharacter } = useCharacterStore()
 
   const openCharacter = char => {
     setCurrentCharacter({ ...char })
@@ -68,6 +55,7 @@ export const HomePage = () => {
 
   const doSearch = async () => {
     const { onlyFavorites, ordered } = toggleValues
+    console.log(txtSearch)
     await getCharacterList({ txtSearch, onlyFavorites, ordered })
   }
 
@@ -91,14 +79,6 @@ export const HomePage = () => {
 
   return (
     <HomeContainer>
-      <SnackMessage
-        open={snackProperties.open}
-        onClose={() => {
-          setSnackProperties({ ...snackProperties, open: false })
-        }}
-      >
-        {snackProperties.msg}
-      </SnackMessage>
       <ResponsiveImage queries={logoImgQueries} />
       <HeaderHome onSubmit={handleSubmit}>
         <h1>EXPLORE O UNIVERSO</h1>
@@ -131,7 +111,7 @@ export const HomePage = () => {
             onFavorite={() => handleFavorite(char)}
             img={getCharImg(char)}
             id={char.id}
-            isFavorite={favIds.includes(char.id)}
+            isFavorite={isFavorite(char.id)}
           />
         ))}
       </CharacterCardContainer>
