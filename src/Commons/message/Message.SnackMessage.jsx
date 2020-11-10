@@ -9,7 +9,7 @@ const SnackContainer = styled.div`
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: ${props => (props.open ? '10px' : `-${2 * props.height}px`)};
+  bottom: ${props => (props.open ? '10px' : `-${2 * props.height || '100'}px`)};
   max-width: 95%;
   z-index: 2000;
   padding: 10px 20px;

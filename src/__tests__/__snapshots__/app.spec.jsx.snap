@@ -4,7 +4,7 @@ exports[`test app render test app 1`] = `
 <DocumentFragment>
    
   <div
-    class="sc-bkzZxe dcsJkL"
+    class="sc-bkzZxe ilUhmn"
   />
   <div
     class="sc-dQppl ceXveq"
@@ -679,7 +679,7 @@ exports[`test app test app with snack message 2`] = `
 <DocumentFragment>
    
   <div
-    class="sc-bkzZxe ikWHCS"
+    class="sc-bkzZxe ilUhmn"
     height="0"
   >
     foo bar
