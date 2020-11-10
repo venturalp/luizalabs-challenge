@@ -65,6 +65,7 @@ export const CharacterFilter = ({
           trueImg={ToggleOn}
           onChange={onOrder}
           value={ordered}
+          id="ordered"
         />
       </div>
       <div className="favorites">
@@ -72,6 +73,7 @@ export const CharacterFilter = ({
           label="Somente favoritos"
           onChange={onFavorites}
           value={onlyFavorites}
+          id="onlyFavorites"
         />
       </div>
     </Grid>

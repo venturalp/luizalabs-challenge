@@ -51,7 +51,12 @@ export const CharacterCard = ({
 
   return (
     <div {...props} ref={cardRef}>
-      <CardBody img={img} height={height} onClick={onClick} />
+      <CardBody
+        img={img}
+        height={height}
+        onClick={onClick}
+        data-testid="charCard"
+      />
       <CardFooter>
         <p>{name}</p>
         <Toggle onChange={onFavorite} value={isFavorite} id="toggleFavorite" />

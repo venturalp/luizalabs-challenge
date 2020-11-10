@@ -3,27 +3,22 @@ import { server } from 'Commons/tests/Tests.MockServer'
 
 jest.setTimeout(3000)
 
-const localStorageMock = () => {
-  let store = {}
+global.mockPush = jest.fn()
+global.mockSearch = '?q=heroname'
+global.pathname = '/'
 
-  return {
-    getItem(key) {
-      return store[key]
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useHistory: () => ({
+    location: { pathname: global.pathname, search: global.mockSearch },
+    push: global.mockPush,
+    listen(func) {
+      func(this.location)
     },
-    setItem(key, value) {
-      store[key] = value.toString()
-    },
-    clear() {
-      store = {}
-    },
-    removeItem(key) {
-      delete store[key]
-    },
-  }
-}
+  }),
+}))
 
 beforeAll(() => {
-  Object.defineProperty(window, 'localStorage', { value: localStorageMock })
   server.listen()
 })
 afterEach(() => {
