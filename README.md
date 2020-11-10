@@ -6,6 +6,8 @@
 
 ![Marvel](docs/images/marvel.png 'Marvel')
 
+Access here: https://venturalp-marvel.netlify.app/
+
 # 🦸‍♂️ Luizalabs Marvel Challenge
 
 ## 🛠 Stack
