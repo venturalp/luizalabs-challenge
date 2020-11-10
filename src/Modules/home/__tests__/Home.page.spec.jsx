@@ -110,7 +110,7 @@ describe('test home page', () => {
       expect(await screen.queryAllByTestId('charCard')).toHaveLength(1)
     })
   })
-  it('test ordered by name and open card', async () => {
+  it('test ordered by name, resize and open card', async () => {
     const { result: history } = renderHook(() => useHistory())
     global.mockSearch = ''
 
@@ -128,6 +128,10 @@ describe('test home page', () => {
     )
 
     expect(await screen.queryAllByTestId('charCard')).toHaveLength(19)
+
+    global.window.innerWidth = 500
+    global.window.dispatchEvent(new Event('resize'))
+    await sleepTest()
 
     server.use(
       rest.get(

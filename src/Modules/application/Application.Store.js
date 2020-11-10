@@ -6,6 +6,7 @@ export const [useApplicationStore] = create(set => ({
   snackProperties: {
     open: false,
     msg: '',
+    time: 4000,
   },
   setSnackProperties: snackProperties => set({ snackProperties }),
 }))

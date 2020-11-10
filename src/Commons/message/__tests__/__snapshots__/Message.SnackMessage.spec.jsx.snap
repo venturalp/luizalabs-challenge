@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test SnackMessage render snack message w default values 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdfBwQ etjIxb"
+  >
+    foo bar
+  </div>
+</DocumentFragment>
+`;

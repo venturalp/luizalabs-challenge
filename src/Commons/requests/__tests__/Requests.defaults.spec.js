@@ -25,4 +25,17 @@ describe('test requests defaults', () => {
       expect(response).toEqual(400)
     })
   })
+  it('test request with loading and error', async () => {
+    const { result } = renderHook(() => useRequests())
+    server.use(
+      rest.get('http://foo.bar', (req, res, ctx) => res(ctx.status(400))),
+    )
+    const response = await result.current
+      .get('http://foo.bar', { showLoading: true })
+      .then(resp => resp.data)
+      .catch(err => err.status)
+    waitFor(() => {
+      expect(response).toEqual(400)
+    })
+  })
 })

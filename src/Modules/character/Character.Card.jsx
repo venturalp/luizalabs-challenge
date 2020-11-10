@@ -28,7 +28,7 @@ export const CharacterCard = ({
   name,
   onFavorite,
   onClick,
-  isFavorite = false,
+  isFavorite,
   img,
   ...props
 }) => {

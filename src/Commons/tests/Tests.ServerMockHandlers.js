@@ -10,7 +10,7 @@ const handlers = [
     res(ctx.json({ success: true })),
   ),
   rest.get(
-    'https://gateway.marvel.com/v1/public/characters/1011334',
+    'https://gateway.marvel.com/v1/public/characters/1017100',
     (req, res, ctx) => res(ctx.json(characterMock)),
   ),
   rest.get(
@@ -18,7 +18,7 @@ const handlers = [
     (req, res, ctx) => res(ctx.json(characterMockList)),
   ),
   rest.get(
-    'https://gateway.marvel.com/v1/public/characters/1011334/comics?limit=10&orderBy=-onsaleDate',
+    'https://gateway.marvel.com/v1/public/characters/1017100/comics?limit=10&orderBy=-onsaleDate',
     (req, res, ctx) => res(ctx.json(characterComicsMock)),
   ),
 ]

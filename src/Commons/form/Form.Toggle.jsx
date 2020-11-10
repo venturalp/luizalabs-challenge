@@ -13,7 +13,7 @@ const IcoWrapper = styled.span`
 export const Toggle = ({
   falseImg = HeartEmpty,
   trueImg = HeartFilled,
-  defaultValue = false,
+  defaultValue,
   label,
   value,
   alt = 'toggleIco',
@@ -21,12 +21,14 @@ export const Toggle = ({
   id,
   ...props
 }) => {
-  const [isChecked, setIsChecked] = useState(defaultValue)
+  const [isChecked, setIsChecked] = useState(defaultValue || false)
 
   const handleClick = () => {
     if (onChange) onChange({ target: { value: !isChecked } })
 
-    if (defaultValue) setIsChecked(!isChecked)
+    if (defaultValue !== null && defaultValue != undefined) {
+      setIsChecked(!isChecked)
+    }
   }
 
   useEffect(() => {

@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react'
 import { ThemeWrapper } from 'Commons/tests/Tests.Helpers'
 import React from 'react'
-import { ErrorMessage } from '../Message.ErrorMessage'
+import { SnackMessage } from '../Message.SnackMessage'
 
-describe('test ErrorMessage', () => {
-  it('test with prop align', () => {
+describe('test SnackMessage', () => {
+  it('render snack message w default values', () => {
     const { asFragment } = render(
       <ThemeWrapper>
-        <ErrorMessage error="foo bar" align="left" />
+        <SnackMessage>foo bar</SnackMessage>
       </ThemeWrapper>,
     )
 

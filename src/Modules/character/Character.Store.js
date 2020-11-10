@@ -8,7 +8,6 @@ export const [useCharacterStore] = create(set => ({
     const retrieveFav = [
       ...JSON.parse(localStorage.getItem('favorites') || '[]'),
     ]
-    if (retrieveFav.length > 5) return []
 
     return retrieveFav
   })(),

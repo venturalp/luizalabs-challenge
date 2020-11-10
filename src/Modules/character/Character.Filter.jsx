@@ -6,7 +6,7 @@ import { Toggle } from 'Commons/form/Form.Toggle'
 import { Grid } from 'Commons/container/Container.Grid'
 import styled from 'styled-components'
 
-const getMessage = total => {
+export const getMessage = (total = 0) => {
   if (total > 1) return `Encontrados ${total} heróis`
   if (total === 0) return 'Nenhum herói encontrado'
 
@@ -50,9 +50,9 @@ export const CharacterFilter = ({
   onFavorites,
   onOrder,
   total,
-  onlyFavorites = false,
-  ordered = false,
-  className = '',
+  onlyFavorites,
+  ordered,
+  className,
 }) => (
   <CharacterFilterContainer className={className}>
     <p>{getMessage(total)}</p>
