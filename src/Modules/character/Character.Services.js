@@ -99,14 +99,19 @@ export const useCharacterServices = () => {
         },
       )
       .then(response => {
+        console.log('response', response)
         setCurrentCharacterComics([...response?.data?.data?.results])
 
         return { success: true }
       })
-      .catch(() => ({
-        success: false,
-        msg: 'Não foi possível consultar quadrinhos do personagem!',
-      }))
+      .catch(err => {
+        console.log('err', err)
+
+        return {
+          success: false,
+          msg: 'Não foi possível consultar quadrinhos do personagem!',
+        }
+      })
 
   const getCharacterList = ({ txtSearch, onlyFavorites, ordered } = {}) => {
     const params = { apikey }

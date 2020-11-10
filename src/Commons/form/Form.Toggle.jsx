@@ -18,6 +18,7 @@ export const Toggle = ({
   value,
   alt = 'toggleIco',
   onChange,
+  id,
   ...props
 }) => {
   const [isChecked, setIsChecked] = useState(defaultValue)
@@ -33,7 +34,7 @@ export const Toggle = ({
   }, [value])
 
   return (
-    <IcoWrapper onClick={handleClick}>
+    <IcoWrapper onClick={handleClick} data-testid={id}>
       <img src={isChecked ? trueImg : falseImg} {...props} alt={alt} />
       {label ? <p>{label}</p> : null}
     </IcoWrapper>

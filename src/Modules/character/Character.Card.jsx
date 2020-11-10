@@ -54,7 +54,7 @@ export const CharacterCard = ({
       <CardBody img={img} height={height} onClick={onClick} />
       <CardFooter>
         <p>{name}</p>
-        <Toggle onChange={onFavorite} value={isFavorite} />
+        <Toggle onChange={onFavorite} value={isFavorite} id="toggleFavorite" />
       </CardFooter>
     </div>
   )

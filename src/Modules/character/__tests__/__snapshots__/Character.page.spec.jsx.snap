@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test home page test check favorites 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-iBPRYJ kEDcat"
+  >
+    <img
+      class="sc-bdfBwQ dJiJvq"
+      src="logo2x.png"
+    />
+    <form
+      class="sc-fubCfw cMcwNv"
+    >
+      <h1>
+        EXPLORE O UNIVERSO
+      </h1>
+      <p>
+        Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - e aqueles que você descobrirá em breve!
+      </p>
+      <input
+        autocomplete="off"
+        class="sc-gsTCUz ecbFyq"
+        name="searchBar"
+        placeholder="Procure por heróis"
+        type="text"
+        value=""
+      />
+    </form>
+    <div
+      class="sc-jSgupP faYPOp sc-gKsewC ifUxxl sc-pFZIQ eQITDV"
+    >
+      <p>
+        Encontrado undefined herói
+      </p>
+      <div
+        class="sc-jSgupP faYPOp"
+      >
+        <div
+          class="orderName"
+        >
+          <img
+            alt="hero"
+            src="hero.png"
+          />
+          <p>
+            Ordenar por nome - A/Z
+          </p>
+          <span
+            class="sc-dlfnbm jRrDak"
+          >
+            <img
+              alt="toggleIco"
+              src="ToggleOn.png"
+            />
+          </span>
+        </div>
+        <div
+          class="favorites"
+        >
+          <span
+            class="sc-dlfnbm jRrDak"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+            <p>
+              Somente favoritos
+            </p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-kEjbxe khZWnm"
+    />
+    <footer
+      class="sc-jrAGrp kAkGro"
+    />
+  </div>
+</DocumentFragment>
+`;
