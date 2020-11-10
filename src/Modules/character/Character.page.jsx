@@ -169,7 +169,7 @@ export const CharacterPage = withTheme(({ theme }) => {
 
   useEffect(() => {
     if (!currentCharacter) getCharacterInfo(params.id)
-    if (!currentCharacterComics) getCharacterComics(params.id)
+    getCharacterComics(params.id)
     global.document.body.style.backgroundColor = theme.backgroundDetail
 
     return () => {
@@ -196,6 +196,7 @@ export const CharacterPage = withTheme(({ theme }) => {
             <Toggle
               onChange={() => handleFavorite(currentCharacter)}
               value={isFavorite(currentCharacter?.id)}
+              id="toggleChar"
             />
           </Grid>
           <p className="description">{currentCharacter?.description}</p>

@@ -1,10 +1,5 @@
 import { useRequests } from 'Commons/requests/Requests.defaults'
 import { useCharacterStore } from './Character.Store'
-import {
-  characterMockList,
-  characterMock,
-  characterComicsMock,
-} from './mocks/Character.Mock'
 
 const apikey = 'ed55883a8d48462344e398744418175d'
 
@@ -41,36 +36,6 @@ export const useCharacterServices = () => {
         offset: data.offset,
       },
     }
-  }
-
-  const getCharacterListMock = () => {
-    setCharacters({
-      list: [...characterMockList.data.results],
-      pageInfo: {
-        count: characterMockList.data.count,
-        limit: characterMockList.data.limit,
-        offset: characterMockList.data.offset,
-        total: characterMockList.data.total,
-      },
-    })
-
-    return { success: true }
-  }
-
-  const getCharacterInfoMock = () => {
-    setCurrentCharacter({
-      ...characterMock?.data?.results?.[0],
-    })
-
-    return { success: true }
-  }
-
-  const getCharacterComicsMock = () => {
-    setCurrentCharacterComics({
-      ...characterComicsMock?.data?.results,
-    })
-
-    return { success: true }
   }
 
   const getCharacterInfo = id =>
@@ -131,8 +96,8 @@ export const useCharacterServices = () => {
   }
 
   return {
-    getCharacterList, // : getCharacterListMock,
-    getCharacterInfo, // : getCharacterInfoMock,
-    getCharacterComics, // : getCharacterComicsMock,
+    getCharacterList,
+    getCharacterInfo,
+    getCharacterComics,
   }
 }

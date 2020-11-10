@@ -18,6 +18,7 @@ export const App = () => {
       {isLoading && <LoadingDefault />}
       <SnackMessage
         open={snackProperties.open}
+        time={snackProperties.time}
         onClose={() => {
           setSnackProperties({ ...snackProperties, open: false })
         }}

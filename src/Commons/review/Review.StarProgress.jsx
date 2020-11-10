@@ -16,7 +16,7 @@ const StarsContainer = styled.div`
 `
 
 export const rangeValue = (min = 10, max = 100) =>
-  Math.random() * (max - min + 1) + min
+  Math.floor(Math.random() * (max - min + 1) + min)
 
 export const StarProgress = props => (
   <StarsContainer total={rangeValue()} {...props}>

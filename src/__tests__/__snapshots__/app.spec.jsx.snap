@@ -4,13 +4,17 @@ exports[`test app render test app 1`] = `
 <DocumentFragment>
    
   <div
-    class="sc-iBPRYJ kEDcat"
+    class="sc-bkzZxe ilUhmn"
+  />
+  <div
+    class="sc-dQppl ceXveq"
   >
     <img
+      class="sc-jrAGrp gJmdWS"
       src="logo2x.png"
     />
-    <div
-      class="sc-fubCfw cMcwNv"
+    <form
+      class="sc-bqyKva efhoDW"
     >
       <h1>
         EXPLORE O UNIVERSO
@@ -19,62 +23,174 @@ exports[`test app render test app 1`] = `
         Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - e aqueles que você descobrirá em breve!
       </p>
       <input
-        class="sc-gsTCUz ipNxAc"
+        autocomplete="off"
+        class="sc-gsTCUz ecbFyq"
+        name="searchBar"
+        placeholder="Procure por heróis"
         type="text"
+        value="heroname"
       />
-    </div>
+    </form>
     <div
-      class="sc-pFZIQ khUFZM"
+      class="sc-dlfnbm cXQzlp sc-crrsfI hBrwsU sc-kstrdz jjJtjZ"
     >
+      <p>
+        Nenhum herói encontrado
+      </p>
       <div
-        class="sc-gKsewC cSJOJC"
-      >
-        <p>
-          Encontrados 1493 heróis
-        </p>
-      </div>
-    </div>
-    <div
-      class="sc-jrAGrp cRTwlq"
-    >
-      <div
-        class="sc-hKgILt character-card"
+        class="sc-dlfnbm cXQzlp"
       >
         <div
-          class="sc-eCssSg glIvOD"
-          height="0"
-        />
-        <div
-          class="sc-jSgupP cdwkwL"
+          class="orderName"
         >
+          <img
+            alt="hero"
+            src="hero.png"
+          />
           <p>
-            3-D Man
+            Ordenar por nome - A/Z
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="ordered"
+          >
+            <img
+              alt="toggleIco"
+              src="ToggleOn.png"
+            />
+          </span>
+        </div>
+        <div
+          class="favorites"
+        >
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="onlyFavorites"
           >
             <img
               alt="toggleIco"
               src="heartEmpty.png"
             />
+            <p>
+              Somente favoritos
+            </p>
           </span>
         </div>
       </div>
+    </div>
+    <div
+      class="sc-fodVxV rFSyE"
+    />
+    <footer
+      class="sc-hBEYos eKPEAS"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`test app test app with snack message 1`] = `
+<DocumentFragment>
+   
+  <div
+    class="sc-bkzZxe eYgBOG"
+    height="0"
+    open=""
+  >
+    foo bar
+  </div>
+  <div
+    class="sc-dQppl ceXveq"
+  >
+    <img
+      class="sc-jrAGrp gJmdWS"
+      src="logo2x.png"
+    />
+    <form
+      class="sc-bqyKva efhoDW"
+    >
+      <h1>
+        EXPLORE O UNIVERSO
+      </h1>
+      <p>
+        Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - e aqueles que você descobrirá em breve!
+      </p>
+      <input
+        autocomplete="off"
+        class="sc-gsTCUz ecbFyq"
+        name="searchBar"
+        placeholder="Procure por heróis"
+        type="text"
+        value="heroname"
+      />
+    </form>
+    <div
+      class="sc-dlfnbm cXQzlp sc-crrsfI hBrwsU sc-kstrdz jjJtjZ"
+    >
+      <p>
+        Encontrados 1493 heróis
+      </p>
       <div
-        class="sc-hKgILt character-card"
+        class="sc-dlfnbm cXQzlp"
       >
         <div
-          class="sc-eCssSg tGzBg"
+          class="orderName"
+        >
+          <img
+            alt="hero"
+            src="hero.png"
+          />
+          <p>
+            Ordenar por nome - A/Z
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="ordered"
+          >
+            <img
+              alt="toggleIco"
+              src="ToggleOn.png"
+            />
+          </span>
+        </div>
+        <div
+          class="favorites"
+        >
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="onlyFavorites"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+            <p>
+              Somente favoritos
+            </p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-fodVxV rFSyE"
+    >
+      <div
+        class="character-card"
+        id="1017100"
+      >
+        <div
+          class="sc-kEjbxe bvYdcj"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             A-Bomb (HAS)
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -84,20 +200,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1009144"
       >
         <div
-          class="sc-eCssSg jGeHCH"
+          class="sc-kEjbxe fmsBqc"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             A.I.M.
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -107,20 +226,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1010699"
       >
         <div
-          class="sc-eCssSg hUWmUT"
+          class="sc-kEjbxe iiykAU"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Aaron Stack
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -130,20 +252,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1009146"
       >
         <div
-          class="sc-eCssSg eShFlg"
+          class="sc-kEjbxe jnPnxf"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Abomination (Emil Blonsky)
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -153,20 +278,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1016823"
       >
         <div
-          class="sc-eCssSg hUWmUT"
+          class="sc-kEjbxe iiykAU"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Abomination (Ultimate)
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -176,20 +304,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1009148"
       >
         <div
-          class="sc-eCssSg hQKFUp"
+          class="sc-kEjbxe kQeElO"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Absorbing Man
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -199,20 +330,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1009149"
       >
         <div
-          class="sc-eCssSg exyWkk"
+          class="sc-kEjbxe ggEctL"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Abyss
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -222,20 +356,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1010903"
       >
         <div
-          class="sc-eCssSg kIGUYQ"
+          class="sc-kEjbxe jYquWb"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Abyss (Age of Apocalypse)
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -245,20 +382,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1011266"
       >
         <div
-          class="sc-eCssSg hUWmUT"
+          class="sc-kEjbxe iiykAU"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Adam Destine
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -268,20 +408,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1010354"
       >
         <div
-          class="sc-eCssSg ezYcJp"
+          class="sc-kEjbxe hxMcdC"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Adam Warlock
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -291,20 +434,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1010846"
       >
         <div
-          class="sc-eCssSg jjgPU"
+          class="sc-kEjbxe hefFUj"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Aegis (Trey Rollins)
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -314,20 +460,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1011297"
       >
         <div
-          class="sc-eCssSg cpEMUL"
+          class="sc-kEjbxe cHRvPQ"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Agent Brand
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -337,20 +486,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1011031"
       >
         <div
-          class="sc-eCssSg hUWmUT"
+          class="sc-kEjbxe iiykAU"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Agent X (Nijo)
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -360,20 +512,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1009150"
       >
         <div
-          class="sc-eCssSg cVOvZf"
+          class="sc-kEjbxe jUPNeI"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Agent Zero
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -383,20 +538,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1011198"
       >
         <div
-          class="sc-eCssSg dhjmSZ"
+          class="sc-kEjbxe BAgXC"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Agents of Atlas
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -406,20 +564,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1011175"
       >
         <div
-          class="sc-eCssSg hUWmUT"
+          class="sc-kEjbxe iiykAU"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Aginar
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -429,20 +590,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1011136"
       >
         <div
-          class="sc-eCssSg hUWmUT"
+          class="sc-kEjbxe iiykAU"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Air-Walker (Gabriel Lan)
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -452,20 +616,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1011176"
       >
         <div
-          class="sc-eCssSg gFLVCx"
+          class="sc-kEjbxe bpGQfa"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Ajak
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -475,20 +642,23 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
       <div
-        class="sc-hKgILt character-card"
+        class="character-card"
+        id="1010870"
       >
         <div
-          class="sc-eCssSg hgBouR"
+          class="sc-kEjbxe lmFYDe"
+          data-testid="charCard"
           height="0"
         />
         <div
-          class="sc-jSgupP cdwkwL"
+          class="sc-iqHYGH kopUWx"
         >
           <p>
             Ajaxis
           </p>
           <span
-            class="sc-dlfnbm cbbQCX"
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
           >
             <img
               alt="toggleIco"
@@ -498,6 +668,595 @@ exports[`test app render test app 1`] = `
         </div>
       </div>
     </div>
+    <footer
+      class="sc-hBEYos eKPEAS"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`test app test app with snack message 2`] = `
+<DocumentFragment>
+   
+  <div
+    class="sc-bkzZxe ilUhmn"
+    height="0"
+  >
+    foo bar
+  </div>
+  <div
+    class="sc-dQppl ceXveq"
+  >
+    <img
+      class="sc-jrAGrp gJmdWS"
+      src="logo2x.png"
+    />
+    <form
+      class="sc-bqyKva efhoDW"
+    >
+      <h1>
+        EXPLORE O UNIVERSO
+      </h1>
+      <p>
+        Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - e aqueles que você descobrirá em breve!
+      </p>
+      <input
+        autocomplete="off"
+        class="sc-gsTCUz ecbFyq"
+        name="searchBar"
+        placeholder="Procure por heróis"
+        type="text"
+        value="heroname"
+      />
+    </form>
+    <div
+      class="sc-dlfnbm cXQzlp sc-crrsfI hBrwsU sc-kstrdz jjJtjZ"
+    >
+      <p>
+        Encontrados 1493 heróis
+      </p>
+      <div
+        class="sc-dlfnbm cXQzlp"
+      >
+        <div
+          class="orderName"
+        >
+          <img
+            alt="hero"
+            src="hero.png"
+          />
+          <p>
+            Ordenar por nome - A/Z
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="ordered"
+          >
+            <img
+              alt="toggleIco"
+              src="ToggleOn.png"
+            />
+          </span>
+        </div>
+        <div
+          class="favorites"
+        >
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="onlyFavorites"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+            <p>
+              Somente favoritos
+            </p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-fodVxV rFSyE"
+    >
+      <div
+        class="character-card"
+        id="1017100"
+      >
+        <div
+          class="sc-kEjbxe bvYdcj"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            A-Bomb (HAS)
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1009144"
+      >
+        <div
+          class="sc-kEjbxe fmsBqc"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            A.I.M.
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1010699"
+      >
+        <div
+          class="sc-kEjbxe iiykAU"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Aaron Stack
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1009146"
+      >
+        <div
+          class="sc-kEjbxe jnPnxf"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Abomination (Emil Blonsky)
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1016823"
+      >
+        <div
+          class="sc-kEjbxe iiykAU"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Abomination (Ultimate)
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1009148"
+      >
+        <div
+          class="sc-kEjbxe kQeElO"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Absorbing Man
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1009149"
+      >
+        <div
+          class="sc-kEjbxe ggEctL"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Abyss
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1010903"
+      >
+        <div
+          class="sc-kEjbxe jYquWb"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Abyss (Age of Apocalypse)
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1011266"
+      >
+        <div
+          class="sc-kEjbxe iiykAU"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Adam Destine
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1010354"
+      >
+        <div
+          class="sc-kEjbxe hxMcdC"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Adam Warlock
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1010846"
+      >
+        <div
+          class="sc-kEjbxe hefFUj"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Aegis (Trey Rollins)
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1011297"
+      >
+        <div
+          class="sc-kEjbxe cHRvPQ"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Agent Brand
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1011031"
+      >
+        <div
+          class="sc-kEjbxe iiykAU"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Agent X (Nijo)
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1009150"
+      >
+        <div
+          class="sc-kEjbxe jUPNeI"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Agent Zero
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1011198"
+      >
+        <div
+          class="sc-kEjbxe BAgXC"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Agents of Atlas
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1011175"
+      >
+        <div
+          class="sc-kEjbxe iiykAU"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Aginar
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1011136"
+      >
+        <div
+          class="sc-kEjbxe iiykAU"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Air-Walker (Gabriel Lan)
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1011176"
+      >
+        <div
+          class="sc-kEjbxe bpGQfa"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Ajak
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="character-card"
+        id="1010870"
+      >
+        <div
+          class="sc-kEjbxe lmFYDe"
+          data-testid="charCard"
+          height="0"
+        />
+        <div
+          class="sc-iqHYGH kopUWx"
+        >
+          <p>
+            Ajaxis
+          </p>
+          <span
+            class="sc-hKgILt kAHmuW"
+            data-testid="toggleFavorite"
+          >
+            <img
+              alt="toggleIco"
+              src="heartEmpty.png"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+    <footer
+      class="sc-hBEYos eKPEAS"
+    />
   </div>
 </DocumentFragment>
 `;

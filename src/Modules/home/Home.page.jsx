@@ -55,7 +55,6 @@ export const HomePage = () => {
 
   const doSearch = async () => {
     const { onlyFavorites, ordered } = toggleValues
-    console.log(txtSearch)
     await getCharacterList({ txtSearch, onlyFavorites, ordered })
   }
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-const orderQueries = (queries = []) => {
+const orderQueries = queries => {
   const reordered = queries?.sort((a, b) => (a.size < b.size ? 1 : -1))
 
   return reordered
